@@ -1,9 +1,5 @@
 {
   "name": "Drinde",
   "integrations": {},
-  "type": "angular",
-  "proxies": [{
-    "path": "/goto",
-    "proxyUrl": "http://target-server.com"
-  }]
+  "type": "angular"
 }
