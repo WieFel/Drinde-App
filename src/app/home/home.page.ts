@@ -15,9 +15,7 @@ export class HomePage {
         this.httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                'username' : 'wiefel',
-                'feed-key': 'motor-button',
-                'X-AIO-Key' : '054a78f3ea34463cbe75c6f470fd9fdc'
+                'X-AIO-Key': '054a78f3ea34463cbe75c6f470fd9fdc'
             })
         };
     }
