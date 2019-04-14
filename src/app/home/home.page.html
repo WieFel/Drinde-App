@@ -1,13 +1,47 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>
-            Drinde - Drink Independently
-        </ion-title>
-    </ion-toolbar>
 </ion-header>
-<ion-content style="justify-content: center; align-items: center;">
-    <ion-button id="drink-button" expand="block" size="large" (click)="drinkButtonClick()" color="secondary"
-                margin="auto">
-        <ion-icon name="water" slot="icon-only"></ion-icon>
-    </ion-button>
+<ion-content>
+    <ion-grid class="fill-height" style="display: flex; flex-flow: column">
+        <ion-row align-items-center text-center>
+            <ion-col>
+                <ion-button float-left class="header-button" expand="block"
+                            color="outline"
+                            margin="auto"
+                            color="light">
+                    <ion-img src="assets/button/button_refill.png"></ion-img>
+                </ion-button>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col align-items-center>
+                <ion-button float-right class="header-button" expand="block"
+                            color="outline"
+                            margin="auto"
+                            color="light">
+                    <ion-img src="assets/button/button_settings.png"></ion-img>
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row align-items-center text-center style="flex-grow: 1;">
+            <ion-col>
+                <div align-self-center text-center>
+                    <ion-button id="drink-button" expand="block" shape="round" size="large" (click)="drinkButtonClick()"
+                                color="outline"
+                    color="clear">
+                        <!--<ion-icon name="water" slot="icon-only"></ion-icon>-->
+                        <ion-img [src]="buttonImage"></ion-img>
+                    </ion-button>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col align-self-end>
+                <div float-left text-center>
+                <span class="drinde-text">
+                    Drinde <span class="small-text">Drink Independently</span>
+                </span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>
