@@ -1,5 +1,7 @@
 {
   "name": "Drinde",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

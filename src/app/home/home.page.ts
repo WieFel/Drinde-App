@@ -14,8 +14,11 @@ export class HomePage {
     httpOptions: object;
     buttonImage: string = HomePage.EMPTY_BUTTON;
     drinking: boolean = false;
+    bottleEmpty: boolean = false;
 
-    constructor(private httpClient: HttpClient) {
+    constructor(
+        private httpClient: HttpClient
+    ) {
         this.httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
@@ -32,17 +35,22 @@ export class HomePage {
         this.drinking = !this.drinking;
 
         const body = {
-            value: true
+            value: 1
         }
         const false_body = {
-            value: false
+            value: 0
         }
 
 
         this.httpClient.post(HomePage.API_URL, body, this.httpOptions)
             .subscribe(result => {
-                this.httpClient.post<any>(HomePage.API_URL, false_body, this.httpOptions).subscribe();
+                console.log("Got result for post: ", result);
+                this.httpClient.post<any>(HomePage.API_URL, false_body, this.httpOptions).subscribe(res => console.log("Result: ", res));
             });
+    }
+
+    refillButtonClick() {
+        this.bottleEmpty = !this.bottleEmpty;
     }
 
 }

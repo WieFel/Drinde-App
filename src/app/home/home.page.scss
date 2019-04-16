@@ -24,3 +24,12 @@
   font-size: 10pt;
   font-family: Caveat;
 }
+
+.no-border {
+
+}
+
+.red-border {
+  border: 5px solid var(--ion-color-danger);
+  border-radius: 17px;
+}
