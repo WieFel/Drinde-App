@@ -8,7 +8,7 @@
                             color="outline"
                             margin="auto"
                             color="light"
-                            href="/refill">
+                            (click)="refillButtonClick()">
                     <ion-img src="assets/button/button_refill.png"></ion-img>
                 </ion-button>
             </ion-col>
@@ -26,11 +26,12 @@
             <ion-col>
                 <div align-self-center text-center>
                     <ion-button id="drink-button" expand="block" shape="round" size="large" (click)="drinkButtonClick()"
-                                color="light" [ngClass]="!bottleEmpty ? 'no-border' : 'red-border'">
+                                color="light">
                         <!--<ion-icon name="water" slot="icon-only"></ion-icon>-->
-                        <ion-img [src]="buttonImage"></ion-img>
+                        <ion-img [src]="buttonImage" *ngIf="!bottleEmpty"></ion-img>
+                        <ion-img src="assets/button/button_empty_red.png" *ngIf="bottleEmpty"></ion-img>
                     </ion-button>
-                    <span *ngIf="bottleEmpty" style="color: var(--ion-color-danger)">Your bottle is empty. Please refill...</span>
+                    <span *ngIf="bottleEmpty" style="color: var(--ion-color-danger)">Your bottle is almost empty. Please refill!</span>
                 </div>
             </ion-col>
         </ion-row>
